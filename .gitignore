@@ -481,6 +481,7 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
+# Secret sauce
 *.db
 *.db-shm
 *.db-wal
