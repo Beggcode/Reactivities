@@ -1,0 +1,45 @@
+meta {
+  name: Create Activity current user host
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/api/activities
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"title": "Test event with bob as host",
+  	"description": "Description of the test event",
+  	"category":"drinks",
+  	"date": "{{activityDate}}",
+  	"city": "London",
+  	"venue": "London venue",
+      "latitude": 51.5074,
+      "longitude": -0.1278
+  }
+}
+
+script:pre-request {
+  var moment = require("moment");
+  
+  bru.setEnvVar('activityDate', moment().add(14, 'days').toISOString());
+}
+
+script:post-response {
+  // response to be 200
+  test("response is ok", function() {
+      expect(res.getStatus()).to.equal(200)
+  });
+}
+
+settings {
+  encodeUrl: true
+}

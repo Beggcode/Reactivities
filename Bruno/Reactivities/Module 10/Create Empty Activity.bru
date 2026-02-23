@@ -1,0 +1,24 @@
+meta {
+  name: Create Empty Activity
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/api/activities
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Set Main Photo
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{url}}/api/profiles/6819da2a-f1dd-46af-add9-3f6626504b2a/setMain
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {}
+}
+
+settings {
+  encodeUrl: true
+}

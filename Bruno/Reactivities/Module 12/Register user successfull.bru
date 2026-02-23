@@ -1,0 +1,27 @@
+meta {
+  name: Register user successfull
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{url}}/api/account/register
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"email": "jim@test.com",
+  	"displayName": "James",
+  	"password": "Pa$$w0rd"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

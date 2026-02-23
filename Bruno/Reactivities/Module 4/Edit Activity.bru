@@ -1,0 +1,40 @@
+meta {
+  name: Edit Activity
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{url}}/api/activities
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "id": "d267552a-ad0f-45ea-add1-9b1a32df7e94",
+      "title": "Test activity updated again",
+      "date": "2025-04-03T03:10:54.11",
+      "description": "Libero sunt cumque est odit ipsa dolorem aut facilis. Est fuga aut omnis. Sunt sit quidem et omnis. Voluptatem voluptas vero updated.",
+      "category": "Culture",
+      "isCancelled": false,
+      "city": "Brayanbury",
+      "venue": "Sylvan Fall",
+      "latitude": 51.496510900000004,
+      "longitude": -0.17600190725447445
+  }
+}
+
+script:pre-request {
+  var moment = require("moment");
+  
+  bru.setEnvVar('activityDate', moment().add(14, 'days').toISOString());
+}
+
+settings {
+  encodeUrl: true
+}

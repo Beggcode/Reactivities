@@ -1,0 +1,19 @@
+meta {
+  name: Get non existant activity
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/api/activities/d51e33de-105b-4549-96d9-8ba2c7b05a30
+  body: none
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+settings {
+  encodeUrl: true
+}

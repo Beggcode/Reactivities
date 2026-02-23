@@ -1,0 +1,38 @@
+meta {
+  name: Create Activity
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/api/activities
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"title": "{{$randomCatchPhrase}}",
+  	"description": "{{$randomLoremParagraph}}",
+  	"category": "Culture",
+  	"date": "{{activityDate}}",
+  	"city": "{{$randomCity}}",
+  	"venue": "{{$randomStreetName}}",
+      "latitude": 51.496510900000004,
+      "longitude": -0.17600190725447445
+  }
+}
+
+script:pre-request {
+  var moment = require("moment");
+  
+  bru.setEnvVar('activityDate', moment().add(100, 'days').toISOString());
+}
+
+settings {
+  encodeUrl: true
+}

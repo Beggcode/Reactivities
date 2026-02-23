@@ -1,0 +1,36 @@
+meta {
+  name: Edit an Activity as Tom not host
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{url}}/api/activities/71531714-5ecc-4a51-bd76-440de703a59b
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"title": "Editing activity as tom - not host should fail with 403",
+  	"description": "Description of the test event",
+  	"category": "Culture",
+  	"date": "{{activityDate}}",
+  	"city": "London",
+  	"venue": "Tower of London"
+  }
+}
+
+script:pre-request {
+  var moment = require("moment");
+  
+  bru.setEnvVar('activityDate', moment().add(14, 'days').toISOString());
+}
+
+settings {
+  encodeUrl: true
+}

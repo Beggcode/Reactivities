@@ -1,0 +1,31 @@
+meta {
+  name: Verify User Email address
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/api/confirmEmail?userId=0efc6fba-d1a8-485d-9177-ad04352dfe8c&code=Q2ZESjhMSFZ5WTFFaDQxRXBGbmJyVlRHUTA0MDBVNjkzN20zZ1g2NTlnbm52cXlwajFmTkRhUHBqS0hCajd4QUp1WjlLWG80Z25RK3BOdlliaUE5VDBkMjB4ZEQ5OGt5QUJzaVhtZkt3YmV6RHJ6cGt5Ym8zSGI5WE9HOS8yWEhScjlHR3pPUG1uYzRPVmtoeFl3REpDdkRUay9xVGtzcjR2anUrVkFBS3Q4V003RCtGcXBGY01LcEdFRi9XT1FNVmZadVkxRnFydzY4d1NTTGtSbzI4Q29nMjB2aGlZVmx2MVpheDFmZ0hKU2hLNkJBaDhwL2w0WlhVajZQaVA4VWZEKytyQT09
+  body: json
+  auth: inherit
+}
+
+params:query {
+  userId: 0efc6fba-d1a8-485d-9177-ad04352dfe8c
+  code: Q2ZESjhMSFZ5WTFFaDQxRXBGbmJyVlRHUTA0MDBVNjkzN20zZ1g2NTlnbm52cXlwajFmTkRhUHBqS0hCajd4QUp1WjlLWG80Z25RK3BOdlliaUE5VDBkMjB4ZEQ5OGt5QUJzaVhtZkt3YmV6RHJ6cGt5Ym8zSGI5WE9HOS8yWEhScjlHR3pPUG1uYzRPVmtoeFl3REpDdkRUay9xVGtzcjR2anUrVkFBS3Q4V003RCtGcXBGY01LcEdFRi9XT1FNVmZadVkxRnFydzY4d1NTTGtSbzI4Q29nMjB2aGlZVmx2MVpheDFmZ0hKU2hLNkJBaDhwL2w0WlhVajZQaVA4VWZEKytyQT09
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"token": "Q2ZESjhGeHN3VDhjdytWRXNLM0NqaTBpS0FhZEZGUitqN3JpazNDRVduZ3dpSU5PcW1ZMzBxUDRzMW44ek5MRTFuRnJ0RUk3L3oyY01SR2dyTmlXcVd4UHFMRGc4aTd1clB2OHNXZmp4a0w0TXVtdmRNd2ZTVjgvZnVDbHNCRG5jY3FEQUNLM3FBdHo4VlRZek9lU0dBMXduRVZJRlRvYjZTSXdRdXhtT1gwMlp4NjE3L3hwMkhyaGltNlJCZlFTeUNpMzQwRW85bjlFclg1VmNFZjJDSmhnZStjRkxQUmd1ZkVIdG4vRlFhY0EwV1ZzaVlkelBOc0pNV2lMYnVXRUhnUlFvQT09",
+  	"email": "nru02096@eoopy.com"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

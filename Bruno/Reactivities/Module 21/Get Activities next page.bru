@@ -1,0 +1,28 @@
+meta {
+  name: Get Activities next page
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/api/activities?cursor=2025-03-27T00:03:16.594619Z
+  body: none
+  auth: inherit
+}
+
+params:query {
+  cursor: 2025-03-27T00:03:16.594619Z
+}
+
+script:post-response {
+  var data = res.getBody();
+  
+  // response to be 200
+  test("response is 200", function() {
+      expect(res.getStatus()).to.equal(200)
+  });
+}
+
+settings {
+  encodeUrl: true
+}

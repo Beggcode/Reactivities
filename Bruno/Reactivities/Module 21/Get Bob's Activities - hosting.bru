@@ -1,0 +1,19 @@
+meta {
+  name: Get Bob's Activities - hosting
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{url}}/api/profiles/bob-id/activities?filter=hosting
+  body: none
+  auth: inherit
+}
+
+params:query {
+  filter: hosting
+}
+
+settings {
+  encodeUrl: true
+}

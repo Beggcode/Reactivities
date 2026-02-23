@@ -1,0 +1,15 @@
+meta {
+  name: Delete Photo
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{url}}/api/profiles/f1bafa9f-4964-4e97-a4ad-5c04c836ae34/photos
+  body: text
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

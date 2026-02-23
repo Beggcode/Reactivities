@@ -1,0 +1,36 @@
+meta {
+  name: Edit an Activity correct
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{url}}/api/activities/2
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"title": "Test Create Activity updated",
+  	"description": "Description of the test event",
+  	"category": "Culture",
+  	"date": "{{activityDate}}",
+  	"city": "London",
+  	"venue": "Tower of London"
+  }
+}
+
+script:pre-request {
+  var moment = require("moment");
+  
+  bru.setEnvVar('activityDate', moment().add(14, 'days').toISOString());
+}
+
+settings {
+  encodeUrl: true
+}

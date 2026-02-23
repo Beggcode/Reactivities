@@ -1,0 +1,20 @@
+meta {
+  name: Get Facebook Info From Token
+  type: http
+  seq: 11
+}
+
+get {
+  url: https://graph.facebook.com/me?access_token=EAABdyD00yZBQBAJfwt3BZBb6muRj47C4dtaiO5kTsRWrUT5kEkcmD1lsDnRjhdYFZAfb5m5VDdQ0CNzZAZB9DvbgG4OZAbJFg09qrEwbc7D4usogKc2nqnEEaXyiLgvBuZBrDxDWz4HpwG76FLYaHw46ZB7aaUTZCtlo8BoUVQngh3PT8iCqk1q1wQgiv9XoCuzdcDRrHK6ZA2sIvJuToEBwSn&fields=name,email,picture.width(100).height(100)
+  body: none
+  auth: inherit
+}
+
+params:query {
+  access_token: {{fb_token}}
+  fields: name,email,picture.width(100).height(100)
+}
+
+settings {
+  encodeUrl: true
+}

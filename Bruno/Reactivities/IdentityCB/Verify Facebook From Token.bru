@@ -1,0 +1,20 @@
+meta {
+  name: Verify Facebook  From Token
+  type: http
+  seq: 12
+}
+
+get {
+  url: https://graph.facebook.com/debug_token?input_token=EAABdyD00yZBQBAJfwt3BZBb6muRj47C4dtaiO5kTsRWrUT5kEkcmD1lsDnRjhdYFZAfb5m5VDdQ0CNzZAZB9DvbgG4OZAbJFg09qrEwbc7D4usogKc2nqnEEaXyiLgvBuZBrDxDWz4HpwG76FLYaHw46ZB7aaUTZCtlo8BoUVQngh3PT8iCqk1q1wQgiv9XoCuzdcDRrHK6ZA2sIvJuToEBwSn&access_token=appId|appSecret
+  body: none
+  auth: inherit
+}
+
+params:query {
+  input_token: EAABdyD00yZBQBAJfwt3BZBb6muRj47C4dtaiO5kTsRWrUT5kEkcmD1lsDnRjhdYFZAfb5m5VDdQ0CNzZAZB9DvbgG4OZAbJFg09qrEwbc7D4usogKc2nqnEEaXyiLgvBuZBrDxDWz4HpwG76FLYaHw46ZB7aaUTZCtlo8BoUVQngh3PT8iCqk1q1wQgiv9XoCuzdcDRrHK6ZA2sIvJuToEBwSn
+  access_token: appId|appSecret
+}
+
+settings {
+  encodeUrl: true
+}

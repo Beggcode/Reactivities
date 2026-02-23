@@ -1,0 +1,38 @@
+meta {
+  name: Edit an Activity as Bob who is host
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{url}}/api/activities/5a62197b-be97-49f6-acb0-db1135afbe48
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "title": "Editing activity as bob the host",
+  	"description": "Description of the test event",
+  	"category": "Culture",
+  	"date": "{{activityDate}}",
+      "city": "London",
+      "venue": "London venue",
+      "latitude": 51.5074,
+      "longitude": -0.1278
+  }
+}
+
+script:pre-request {
+  var moment = require("moment");
+  
+  bru.setEnvVar('activityDate', moment().add(14, 'days').toISOString());
+}
+
+settings {
+  encodeUrl: true
+}

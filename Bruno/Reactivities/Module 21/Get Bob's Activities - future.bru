@@ -1,0 +1,19 @@
+meta {
+  name: Get Bob's Activities - future
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{url}}/api/profiles/bob-id/activities?filter=future
+  body: none
+  auth: inherit
+}
+
+params:query {
+  filter: future
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Update User Bio
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{url}}/api/profiles
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"displayName": "Bob",
+  	"bio": "Hello from Bob!"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

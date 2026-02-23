@@ -1,0 +1,25 @@
+meta {
+  name: Edit an Activity missing fields
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{url}}/api/activities/e80c88e7-3823-4bb7-8ecf-a5249e7091d4
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"title": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+}

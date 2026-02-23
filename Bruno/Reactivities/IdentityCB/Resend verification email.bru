@@ -1,0 +1,23 @@
+meta {
+  name: Resend verification email
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}/api/account/resendConfirmEmail?email=jane@test.com
+  body: none
+  auth: inherit
+}
+
+params:query {
+  email: jane@test.com
+}
+
+headers {
+  Content-Type: application/json
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Get Bob's Followings
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/api/profiles/bob-id/follow-list?predicate=followings
+  body: none
+  auth: inherit
+}
+
+params:query {
+  predicate: followings
+}
+
+settings {
+  encodeUrl: true
+}

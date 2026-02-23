@@ -1,0 +1,35 @@
+meta {
+  name: Get Activities starting in 2 months time
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/api/activities?startDate={{activityDate}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  startDate: {{activityDate}}
+}
+
+script:pre-request {
+  var moment = require("moment");
+  
+  bru.setEnvVar('activityDate', moment().add(2, 'months').toISOString());
+}
+
+script:post-response {
+  var data = res.getBody();
+  
+  // response to be 200
+  test("response is 200", function() {
+      expect(res.getStatus()).to.equal(200)
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}

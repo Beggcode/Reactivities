@@ -1,0 +1,28 @@
+meta {
+  name: Update attendance
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{url}}/api/activities/5a62197b-be97-49f6-acb0-db1135afbe48/attend
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+script:post-response {
+  var data = res.getBody();
+  
+  // response to be 200
+  test("response is 200", function() {
+      expect(res.getStatus()).to.equal(200);
+  });
+}
+
+settings {
+  encodeUrl: true
+}

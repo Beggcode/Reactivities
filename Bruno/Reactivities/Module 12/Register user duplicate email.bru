@@ -1,0 +1,27 @@
+meta {
+  name: Register user duplicate email
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/api/account/register
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"email": "bob@test.com",
+  	"displayName": "Bob",
+  	"password": "Pa$$w0rd"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
