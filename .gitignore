@@ -481,7 +481,12 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
-# Secret sauce
+# Bruno local settings & secrets
+.bru/
+**/environments/*.bru
+node_modules/
+
+# SQLite database files
 *.db
 *.db-shm
 *.db-wal
