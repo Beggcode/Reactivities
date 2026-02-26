@@ -1,0 +1,3 @@
+type Activity = {
+    id: string
+}
